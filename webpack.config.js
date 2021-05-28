@@ -1,9 +1,15 @@
 const path = require('path');
+
 module.exports = {
-    entry: './src/script/index.js', 
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js',
-    },
-    mode: 'development'
-}
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8000,
+  },
+  mode: 'development',
+};

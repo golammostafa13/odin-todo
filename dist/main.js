@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/script/index.js":
-/*!*****************************!*\
-  !*** ./src/script/index.js ***!
-  \*****************************/
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://odin-todo/./src/script/index.js?");
+eval("console.log(\"index\")\n\n//# sourceURL=webpack://odin-todo/./src/index.js?");
 
 /***/ })
 
@@ -26,7 +26,7 @@ eval("\n\n//# sourceURL=webpack://odin-todo/./src/script/index.js?");
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/script/index.js"]();
+/******/ 	__webpack_modules__["./src/index.js"]();
 /******/ 	
 /******/ })()
 ;
