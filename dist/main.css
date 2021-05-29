@@ -40,6 +40,14 @@
   align-items: center;
   justify-content: center;
 }
+#form-container {
+  display: none;
+  height: 70vh;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
 #project-bar {
   width: 25%;
   height: 100%;
@@ -94,6 +102,11 @@
 #content .item:hover {
   background: #02647a;
 }
+
+label {
+  display: block;
+}
+
 #footer {
   height: 10vh;
   width: 100%;
