@@ -1,6 +1,8 @@
 const home = () => {
     const myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
     const content = document.querySelector('#content');
+    content.innerHTML = "";
+    console.log(myTodoList);
     myTodoList.map((todo => {
 
         const list = document.createElement('p');

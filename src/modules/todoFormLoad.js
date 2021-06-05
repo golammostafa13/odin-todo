@@ -1,6 +1,6 @@
 import home from './homeLoad';
-const myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
-
+let myTodoList = [];
+localStorage.setItem('myTodoList', JSON.stringify(myTodoList))
 const todoItem = {
     title: '',
     description: '',
@@ -60,17 +60,19 @@ const handleInput = (e) => {
 }
 const handleFormSubmit = (e) => {
     e.preventDefault();
+    myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
+    console.log(myTodoList);
     myTodoList.push(todoItem);
     localStorage.setItem('myTodoList', JSON.stringify(myTodoList));
-    console.log(JSON.parse(localStorage.getItem('myTodoList')));
     const container = document.querySelector('.container');
     container.style.display = 'flex';
     const formContainer = document.querySelector('#form-container');
     formContainer.innerHTML = '';
     formContainer.style.display = 'none';
-
-
-    
+    todoItem.title = '';
+    todoItem.description = '';
+    todoItem.dueDate = '';
+    todoItem.priority = '';
     home();
 }
 const todoForm = () => {
