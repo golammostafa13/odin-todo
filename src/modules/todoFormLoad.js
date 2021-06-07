@@ -5,10 +5,6 @@ const todoItem = {
     dueDate: 'due-date',
     priority: 'priority',
 }
-let myTodoList = [];
-myTodoList.push(todoItem);
-localStorage.setItem('myTodoList', JSON.stringify(myTodoList))
-
 
 const createInput = (id, placeholder, text, type, name) => {
     const p = document.createElement('p');
@@ -62,7 +58,8 @@ const handleInput = (e) => {
 }
 const handleFormSubmit = (e) => {
     e.preventDefault();
-    myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
+    let myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
+    console.log(myTodoList);
     myTodoList.push(todoItem);
     localStorage.setItem('myTodoList', JSON.stringify(myTodoList));
     const container = document.querySelector('.container');
