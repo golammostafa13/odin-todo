@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 #nav li:hover {
-  background: green;
+  background: orange;
 }
 .container {
   height: 70vh;
@@ -64,6 +64,7 @@
   height: 50px;
   border-radius: 50%;
   background: lightblue;
+  margin: 10px;
 }
 #project-bar button {
   width: 100%;
@@ -78,7 +79,7 @@
   color: white;
 }
 #project-bar button:hover {
-  background: green;
+  background: orange;
   font-size: 32px;
 }
 #content {
@@ -92,21 +93,55 @@
 }
 #content .item {
   width: 95%;
-  height: 20px;
+  height: 30px;
   margin: 2px;
   padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #034e5f;
-  border-radius: 4px;
   color: white;
+  border-left: 4px solid orange;
+  font-size: 18px;
+  border-right: 4px solid orange;
+}
+#content .todo {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
 }
 #content .item:hover {
   background: #02647a;
+  box-shadow: 0px 3px 5px #777;
 }
-
 label {
   display: block;
 }
 
+.project {
+  width: 95%;
+  height: 20px;
+  cursor: pointer;
+  margin: 2px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #034e5f;
+  color: white;
+  border-left: 4px solid orange;
+  border-right: 4px solid orange;
+  font-size: 18px;
+}
+.header {
+  font-size: 24px;
+  color: #02647a;
+  font-weight: bold;
+}
+.project:hover {
+  background: #02647a;
+  box-shadow: 0px 3px 5px #777;
+}
 #footer {
   height: 10vh;
   width: 100%;
@@ -122,5 +157,5 @@ label {
   font-weight: bold;
 }
 #footer a:hover {
-  color: green;
+  color: orange;
 }

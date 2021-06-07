@@ -19,3 +19,4 @@ const weekBtn = document.querySelector('#week');
 weekBtn.addEventListener('click', () =>{
     week();
 })
+
