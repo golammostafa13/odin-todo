@@ -59,8 +59,16 @@ const handleInput = (e) => {
 const handleFormSubmit = (e) => {
     e.preventDefault();
     let myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
-    console.log(myTodoList);
-    myTodoList.push(todoItem);
+    if(!myTodoList){
+        myTodoList = [];
+        myTodoList.push({
+            title: 'title',
+            description: 'description',
+            dueDate: 'due-date',
+            priority: 'priority',
+        });
+    }
+    else myTodoList.push(todoItem);
     localStorage.setItem('myTodoList', JSON.stringify(myTodoList));
     const container = document.querySelector('.container');
     container.style.display = 'flex';
