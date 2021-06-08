@@ -3,6 +3,7 @@ import { createListItem } from "./createListItem";
 
 const home = () => {
     const myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
+    console.log(myTodoList);
     const content = document.querySelector('#content');
     content.innerHTML = "";
 
