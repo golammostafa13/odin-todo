@@ -19,9 +19,6 @@ const handleFormSubmit = (e) => {
 
     const container = document.querySelector('.container');
     container.style.display = 'flex';
-    const formContainer = document.querySelector('#form-container');
-    formContainer.innerHTML = '';
-    formContainer.style.display = 'none';
     projectItem.title = '';
     createProjectList();
 }
@@ -40,6 +37,7 @@ const projectForm = () => {
     input.type = 'text';
     input.name = 'title';
     input.onblur = handleInput;
+    input.required = true;
     input.placeholder = "Project Name";
     p.appendChild(input);
 

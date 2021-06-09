@@ -47,6 +47,7 @@
   margin: 0;
   align-items: center;
   justify-content: center;
+  background: khaki;
 }
 #project-bar {
   width: 30%;
@@ -71,18 +72,16 @@
   outline: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
-  background: #02647a;
+  background: #034e5f;
   color: white;
   padding: 2px;
 }
 #content {
   width: 70%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: lightgray;
 }
 #content .item {
@@ -121,7 +120,7 @@ label {
   padding: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   color: white;
   border-left: 4px solid orange;
   border-right: 4px solid orange;
@@ -132,16 +131,25 @@ label {
   background: #034e5f;
   cursor: pointer;
   font-size: 20px;
+  margin: 0 2px;
+  text-align: center;
+  font-weight: normal;
 }
 .project-add-todo-btn {
-  font-size: 24px;
-  width: 24px;
-  height: 24px;
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: white;
   color: #02647a;
   cursor: pointer;
   text-align: center;
+  font-weight: bolder;
+  margin-left: 2px;
+}
+.project-add-todo-btn:hover {
+  background: #02647a;
+  color: white;
 }
 .header {
   font-size: 24px;
@@ -149,7 +157,10 @@ label {
   font-weight: bold;
   border-bottom: 2px solid orange;
 }
-.project-title:hover {
+.project-title:hover,
+#addTodoItem:hover,
+#project-bar button:hover,
+#project-form button:hover {
   background: #02647a;
   box-shadow: 0px 3px 5px #777;
 }
@@ -169,4 +180,38 @@ label {
 }
 #footer a:hover {
   color: orange;
+}
+
+#todo-form,
+#project-form {
+  padding: 5px;
+  font-family: monospace;
+  font-size: 16px;
+  margin: 10px;
+  width: 70%;
+}
+#todo-form input,
+#project-form input {
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 2px 1px;
+  margin: 2px 0px;
+  height: 25px;
+}
+#addTodoItem,
+#project-form button {
+  width: 100%;
+  /* height: 100%; */
+  /* border-radius: 50%; */
+  border: 2px solid orange;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background: #034e5f;
+  color: white;
+  padding: 5px;
 }

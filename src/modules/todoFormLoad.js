@@ -18,6 +18,8 @@ const createInput = (id, placeholder, text, type, name) => {
     input.name = name;
     input.placeholder = placeholder;
     input.onblur = handleInput;
+    input.required = true;
+    input.autocomplete = false;
     p.appendChild(label);
     p.appendChild(input);
 
@@ -68,9 +70,6 @@ const handleFormSubmit = (e, projectTitle) => {
     localStorage.setItem('myTodoList', JSON.stringify(myTodoList));
     const container = document.querySelector('.container');
     container.style.display = 'flex';
-    const formContainer = document.querySelector('#form-container');
-    formContainer.innerHTML = '';
-    formContainer.style.display = 'none';
     todoItem.title = '';
     todoItem.description = '';
     todoItem.dueDate = '';

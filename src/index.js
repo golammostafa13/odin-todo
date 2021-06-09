@@ -33,7 +33,6 @@ const allProjectsHandle = () => {
         project.addEventListener('click',()=>projectHandle(project));
     }
 }
-
 export const init = () =>{
     loadLocalStorage();
     home();
