@@ -9,10 +9,11 @@ localStorage.setItem('myProjectList', JSON.stringify(myProjectList));
 const handleInput = (e) => {
     e.preventDefault();
     projectItem[e.target.name] = e.target.value;
-    console.log(projectItem);
 }
 const handleFormSubmit = (e) => {
     e.preventDefault();
+    //single project localStorage
+    localStorage.setItem(projectItem.title, JSON.stringify([]));
     // Project load on local storage
     myProjectList = JSON.parse(localStorage.getItem('myProjectList'));
     myProjectList.push(projectItem);
@@ -23,11 +24,11 @@ const handleFormSubmit = (e) => {
     const formContainer = document.querySelector('#form-container');
     formContainer.innerHTML = '';
     formContainer.style.display = 'none';
-
-    createProjectList()
+    projectItem.title = '';
+    createProjectList();
 }
 const projectForm = () => {
-    const infoContainer = document.querySelector('#info-container');
+    const infoContainer = document.querySelector('#content');
     infoContainer.innerHTML = "";
 
     const form = document.createElement('form');
@@ -41,7 +42,7 @@ const projectForm = () => {
     input.type = 'text';
     input.name = 'title';
     input.onblur = handleInput;
-    input.placeholder = "project name";
+    input.placeholder = "Project Name";
     p.appendChild(input);
 
     const createProjectBtn = document.createElement('button');

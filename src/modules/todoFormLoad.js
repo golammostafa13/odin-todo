@@ -57,8 +57,15 @@ const handleInput = (e) => {
     e.preventDefault();
     todoItem[e.target.name] = e.target.value;
 }
-const handleFormSubmit = (e) => {
+const handleFormSubmit = (e, projectTitle) => {
     e.preventDefault();
+    //single project locally set
+    let singleProjectTodo = JSON.parse(localStorage.getItem(projectTitle));
+    singleProjectTodo.push(todoItem);
+    localStorage.setItem(projectTitle, JSON.stringify(singleProjectTodo));
+    // console.log(singleProjectTodo, projectTitle);
+
+    //all project locally set
     let myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
     console.log(myTodoList);
     myTodoList.push(todoItem);
@@ -74,13 +81,13 @@ const handleFormSubmit = (e) => {
     todoItem.priority = '';
     home()
 }
-const todoForm = () => {
-    const infoContainer = document.querySelector('#info-container');
+const todoForm = (projectTitle) => {
+    const infoContainer = document.querySelector('#content');
     infoContainer.innerHTML = "";
 
     const form = document.createElement('form');
     form.setAttribute('id', 'todo-form');
-    form.onsubmit = handleFormSubmit;
+    form.onsubmit = (e)=>handleFormSubmit(e, projectTitle);
 
     const title = createInput('title', 'title', 'Title', 'text', 'title');
     const description = createInput('description', 'e.g net bill', 'Description', 'text', 'description');

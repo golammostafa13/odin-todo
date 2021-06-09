@@ -1,8 +1,9 @@
 #main {
-  height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background: lightgray;
 }
 #header {
   height: 20vh;
@@ -33,12 +34,10 @@
   background: orange;
 }
 .container {
-  height: 70vh;
+  height: 100%;
   width: 100%;
   margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 #form-container {
   display: none;
@@ -49,47 +48,41 @@
   justify-content: center;
 }
 #project-bar {
-  width: 25%;
-  height: 100%;
-  background: rgb(194, 194, 194);
+  width: 30%;
+  height: 100vh;
+  background: rgb(223, 223, 223);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: #02647a;
   font-weight: bold;
 }
-#add-all {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+#create-project {
+  width: 50%;
   background: lightblue;
-  margin: 10px;
+  margin: 5px;
+  padding: 3px;
 }
 #project-bar button {
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  /* height: 100%; */
+  /* border-radius: 50%; */
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 28px;
+  /* font-size: 28px; */
   font-weight: bold;
   background: #02647a;
   color: white;
 }
-#project-bar button:hover {
-  background: orange;
-  font-size: 32px;
-}
 #content {
-  width: 75%;
+  width: 70%;
   height: 100%;
-  background: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5px;
+  justify-content: center;
+  background: lightgray;
 }
 #content .item {
   width: 95%;
@@ -117,28 +110,44 @@
 label {
   display: block;
 }
-
+#projects {
+  width: 70%;
+}
 .project {
-  width: 95%;
+  width: 100%;
   height: 20px;
-  cursor: pointer;
   margin: 2px;
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #034e5f;
   color: white;
   border-left: 4px solid orange;
   border-right: 4px solid orange;
-  font-size: 18px;
+}
+.project-title {
+  width: 88%;
+  height: 24px;
+  background: #034e5f;
+  cursor: pointer;
+  font-size: 20px;
+}
+.project-add-todo-btn {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  color: #02647a;
+  cursor: pointer;
+  text-align: center;
 }
 .header {
   font-size: 24px;
   color: #02647a;
   font-weight: bold;
 }
-.project:hover {
+.project-title:hover {
   background: #02647a;
   box-shadow: 0px 3px 5px #777;
 }
