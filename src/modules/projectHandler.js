@@ -3,14 +3,17 @@ import { createListItem } from "./createListItem";
 
 const projectHandle = (project) => {
     const title = project.innerText;
-    const singleProjectList = JSON.parse(localStorage.getItem(title));
-    // console.log(title, singleProjectList);
+
     const content = document.querySelector('#content');
     content.innerHTML = "";
     createHeader(title.toUpperCase());
     todayHomeWeek('#02647a','#02647a', '#02647a');
 
-    singleProjectList && singleProjectList.map((todo => {
+    const myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
+    const singleProjectList = myTodoList.filter(todo =>{
+        if(todo.projectName === title)return todo;
+    });
+    singleProjectList.map((todo => {
         const list = createListItem(todo);
         content.appendChild(list);
     }));

@@ -12,8 +12,6 @@ const handleInput = (e) => {
 }
 const handleFormSubmit = (e) => {
     e.preventDefault();
-    //single project localStorage
-    localStorage.setItem(projectItem.title, JSON.stringify([]));
     // Project load on local storage
     myProjectList = JSON.parse(localStorage.getItem('myProjectList'));
     myProjectList.push(projectItem);

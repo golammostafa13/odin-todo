@@ -19,10 +19,10 @@ const allEvents = () => {
 const allProjectEvents = () => {
 
     const addTodoBtns = document.querySelectorAll('.project-add-todo-btn');
-    const projectTitle = addTodoBtns[0].previousElementSibling.innerText;
     // console.log(projectTitle);
     for(let i = 0; i < addTodoBtns.length; i++) {
         const addTodo = addTodoBtns[i];
+        const projectTitle = addTodo.previousElementSibling.innerText;
         addTodo.addEventListener('click', ()=>todoForm(projectTitle));
     }
 }

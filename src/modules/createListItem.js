@@ -1,5 +1,6 @@
 export const createListItem = (todo) => {
-    // console.log(todo);
+    // console.log(todo);      
+    // if(!todo)return null;
     const list = document.createElement('div');
     list.className = 'item';
     const checkbox = document.createElement('input');

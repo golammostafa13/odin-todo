@@ -10,7 +10,7 @@ const home = () => {
     
     createHeader('Home');
 
-    myTodoList.map((todo => {
+    myTodoList && myTodoList.map((todo => {
         const list = createListItem(todo);
         content.appendChild(list);
     }));

@@ -19,7 +19,6 @@ export const createProjectList = () => {
         projectDiv.appendChild(addTodoBtn);
 
         projects.appendChild(projectDiv);
-
         //single project locally set
     })
     init();

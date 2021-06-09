@@ -1,6 +1,7 @@
 import home from "./homeLoad";
 
 const todoItem = {
+    projectName: '',
     title: 'title',
     description: 'description',
     dueDate: 'due-date',
@@ -59,15 +60,10 @@ const handleInput = (e) => {
 }
 const handleFormSubmit = (e, projectTitle) => {
     e.preventDefault();
-    //single project locally set
-    let singleProjectTodo = JSON.parse(localStorage.getItem(projectTitle));
-    singleProjectTodo.push(todoItem);
-    localStorage.setItem(projectTitle, JSON.stringify(singleProjectTodo));
-    // console.log(singleProjectTodo, projectTitle);
 
     //all project locally set
     let myTodoList = JSON.parse(localStorage.getItem('myTodoList'));
-    console.log(myTodoList);
+    todoItem.projectName = projectTitle;
     myTodoList.push(todoItem);
     localStorage.setItem('myTodoList', JSON.stringify(myTodoList));
     const container = document.querySelector('.container');
@@ -79,12 +75,11 @@ const handleFormSubmit = (e, projectTitle) => {
     todoItem.description = '';
     todoItem.dueDate = '';
     todoItem.priority = '';
-    home()
+    home();
 }
 const todoForm = (projectTitle) => {
     const infoContainer = document.querySelector('#content');
     infoContainer.innerHTML = "";
-
     const form = document.createElement('form');
     form.setAttribute('id', 'todo-form');
     form.onsubmit = (e)=>handleFormSubmit(e, projectTitle);

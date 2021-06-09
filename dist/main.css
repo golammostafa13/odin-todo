@@ -15,6 +15,7 @@
   justify-content: center;
   font-size: 16px;
   color: #02647a;
+  border-bottom: 2px solid orange;
   font-weight: bold;
 }
 #nav {
@@ -59,7 +60,6 @@
 }
 #create-project {
   width: 50%;
-  background: lightblue;
   margin: 5px;
   padding: 3px;
 }
@@ -67,13 +67,14 @@
   width: 100%;
   /* height: 100%; */
   /* border-radius: 50%; */
-  border: none;
+  border: 2px solid orange;
   outline: none;
   cursor: pointer;
-  /* font-size: 28px; */
+  font-size: 16px;
   font-weight: bold;
   background: #02647a;
   color: white;
+  padding: 2px;
 }
 #content {
   width: 70%;
@@ -146,6 +147,7 @@ label {
   font-size: 24px;
   color: #02647a;
   font-weight: bold;
+  border-bottom: 2px solid orange;
 }
 .project-title:hover {
   background: #02647a;
